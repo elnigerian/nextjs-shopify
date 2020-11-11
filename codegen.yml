@@ -1,0 +1,15 @@
+overwrite: true
+schema:
+- "https://graphql.myshopify.com/api/graphql":
+          headers:
+            'X-Shopify-Storefront-Access-Token': 'dd4d4dc146542ba7763305d71d1b3d38'
+documents: "./graphql/**/*.ts"
+generates:
+  ./generated/apolloShopify.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
